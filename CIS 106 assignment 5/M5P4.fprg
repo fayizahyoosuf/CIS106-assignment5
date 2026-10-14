@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M5P4"/>
+        <attribute name="authors" value="shama"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-13 09:48:37 PM"/>
+        <attribute name="created" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMTM7MDk6NDI6NTQgUE07MjkzNA=="/>
+        <attribute name="edited" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMTM7MDk6NDg6MzcgUE07MTszMDQ5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="appliancename" type="String" array="False" size=""/>
+            <declare name="cost, warrantycost, totalcost" type="Real" array="False" size=""/>
+            <input variable="appliancename"/>
+            <input variable="cost"/>
+            <if expression="cost&gt;1000.00">
+                <then>
+                    <assign variable="warrantycost" expression="cost*0.10"/>
+                </then>
+                <else>
+                    <assign variable="warrantycost" expression="cost*0.05"/>
+                </else>
+            </if>
+            <assign variable="totalcost" expression="cost+warrantycost"/>
+            <output expression="&quot;Appliance: &quot; &amp; appliancename &amp; &quot;, Total: $&quot; &amp; totalcost" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
